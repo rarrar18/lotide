@@ -17,3 +17,25 @@ const letterPositions = function(sentence) {
 };
 // TEST CODE
 letterPositions("lighthouse in the house");
+
+// FUNCTION IMPLEMENTATION: Takes in two arrays and returns true or false, based on a perfect match
+const assertArraysEqual = function(actual, expected) {
+  // first compare the lengths of each array
+  if (actual.length !== expected.length) {
+    console.log(`🛑🛑🛑 False`);
+    return false;
+  } else { // then compare every element of each array
+    for (let i = 0; i < actual.length; i++) {
+      // console.log("actual[i]:", actual[i]);
+      // console.log("expected[i]:", expected[i]);
+      if (actual[i] !== expected[i]) {
+        console.log(`🛑🛑🛑 False`);
+        return false;
+      }
+    }
+    console.log(`✅✅✅ True`);
+    return true;
+  }
+};
+
+//assertArraysEqual(letterPositions("hello").e, [1]);

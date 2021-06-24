@@ -1,5 +1,5 @@
 // FUNCTION IMPLEMENTATION: Takes in two arrays and returns true or false, based on a perfect match
-const eqArrays = function(actual, expected) {
+const assertArraysEqual = function(actual, expected) {
   // first compare the lengths of each array
   if (actual.length !== expected.length) {
     console.log(`🛑🛑🛑 False`);
@@ -19,8 +19,8 @@ const eqArrays = function(actual, expected) {
 };
 
 // TEST CODE for eqArrays()
-eqArrays([1, 2, 3], [1, 2, 3]); // => true
-eqArrays([1, 2, 3], [3, 2, 1]); // => false
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
 
-eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
