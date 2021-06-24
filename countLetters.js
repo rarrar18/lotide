@@ -21,3 +21,18 @@ const countLetters = function(sentence) {
 };
 // TEST CODE: check letter count for this sentence
 countLetters("lighthouse in the house");
+
+// ALT FUNCTION: return all indices in the string where each character is found
+// const countLetters = function(sentence) {
+//   const results = {}; // create an empty object to store results
+//   for (let letter of sentence) {
+//     if (letter.match(/[a-z]/i)) {
+//       if (results[letter]) {
+//         results[letter] += 1;
+//       } else {
+//         results[letter] = 1;
+//       }
+//     }
+//   }
+//   return results;
+// };

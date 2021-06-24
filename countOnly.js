@@ -25,7 +25,6 @@ const countOnly = function(allItems, itemsToCount) {
   return result; //return an object that can represent the stats
 };
 
-
 // TEST CODE
 const firstNames = [
   "Karl",
