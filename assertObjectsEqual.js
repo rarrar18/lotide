@@ -1,28 +1,13 @@
-// FUNCTION: Check equality of two values
-const assertEqual = function(actual, expected) {
-  if (eqObjects(actual,expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// FUNCTION: Check equality of two arrays
 const eqArrays = function(actual, expected) {
   // first compare the lengths of each array
   if (actual.length !== expected.length) {
-    // console.log(`🛑🛑🛑 False`);
     return false;
   } else { // then compare every element of each array
     for (let i = 0; i < actual.length; i++) {
-      // console.log("actual[i]:", actual[i]);
-      // console.log("expected[i]:", expected[i]);
       if (actual[i] !== expected[i]) {
-        // console.log(`🛑🛑🛑 False`);
         return false;
       }
     }
-    // console.log(`✅✅✅ True`);
     return true;
   }
 };
@@ -56,19 +41,27 @@ const eqObjects = function(object1, object2) {
   return true;
 };
 
+// FUNCTION IMPLEMENTATION
+const assertObjectsEqual = function(actual, expected) {
+  const inspect = require('util').inspect; // imports the util library
+  if (eqObjects(actual,expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
+};
+
 // TEST CODE
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-console.log(eqObjects(ab, ba)); // => true
+assertObjectsEqual(ab, ba); // => true
 
 const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
+assertObjectsEqual(ab, abc); // => false
 
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
-console.log(eqObjects(cd, dc)); // => true
-console.log(eqObjects(cd, cd2)); // => false
-assertEqual(cd, dc); // => true
-assertEqual(cd, cd2); // => false
+assertObjectsEqual(cd, dc); // => true
+assertObjectsEqual(cd, cd2); // => false
