@@ -1,4 +1,3 @@
-// const assertEqual = require('./assertEqual');
 const head = function(array) {
   //return the first item in an array
   const found = array[0];
@@ -6,5 +5,4 @@ const head = function(array) {
 };
 
 // Exports the function from this module (leaves out the test code)
-// module.exports = assertEqual;
 module.exports = head;

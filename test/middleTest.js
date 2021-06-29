@@ -1,4 +1,4 @@
-const assertArraysEqual = require('../assertArraysEqual.js')
+// const assertArraysEqual = require('../assertArraysEqual.js')
 const middle = require('../middle.js')
 
 // For arrays with one or two elements, there is no middle. Return empty array.

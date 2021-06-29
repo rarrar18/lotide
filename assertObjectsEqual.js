@@ -1,45 +1,4 @@
-const eqArrays = function(actual, expected) {
-  // first compare the lengths of each array
-  if (actual.length !== expected.length) {
-    return false;
-  } else { // then compare every element of each array
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i] !== expected[i]) {
-        return false;
-      }
-    }
-    return true;
-  }
-};
-
-// FUNCTION: Takes in two objects and returns true or false, based on a perfect match of keys and values
-const eqObjects = function(object1, object2) {
-  const keys1 = Object.keys(object1);
-  const keys2 = Object.keys(object2);
-
-  //compare lengths of two keys
-  if (keys1.length !== keys2.length) {
-    return false;
-  }
-
-  // iterate through array of keys
-  for (const key of keys1) {
-    if (Array.isArray(object1[key])) {
-      if (!eqArrays(object1[key], object2[key])) {
-        return false;
-      }
-      continue;
-    }
-
-    // if the above condition is false
-    if (object1[key] !== object2[key]) {
-      return false;
-    }
-  }
-
-  // if it passes the tests above, it must be true
-  return true;
-};
+const eqObjects = require('./eqObjects');
 
 // FUNCTION IMPLEMENTATION
 const assertObjectsEqual = function(actual, expected) {
@@ -50,6 +9,8 @@ const assertObjectsEqual = function(actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
   }
 };
+
+module.exports = assertObjectsEqual;
 
 // TEST CODE
 const ab = { a: "1", b: "2" };

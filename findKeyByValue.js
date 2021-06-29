@@ -30,3 +30,5 @@ console.log(findKeyByValue(bestTVShowsByGenre, "The Wire")); // Should output dr
 console.log(findValByKey(bestTVShowsByGenre, "sciFi")); // Should output The Expanse
 assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama"); // Should output Assertion Passed
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined); // Should output Assertion Passed
+
+module.exports = findKeyByValue;
