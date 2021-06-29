@@ -1,7 +1,10 @@
 const tail = function(array) {
   //returns all items in array except for the head
-  const newArray = array.slice(1); //removes first element of original array
-  console.log(newArray);
+  if (array.length > 1) {
+    return array.slice(1); //removes first element of original array
+  } else {
+    return [];
+  }
 };
 
 module.exports = tail;
